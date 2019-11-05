@@ -1,34 +1,100 @@
-
-
-
-.homeHeader {
-  margin-top: 100px;
-  font-size: 70px;
-  color: #333333;
+* {
+  box-sizing: border-box;
 }
 
-.homeImage {
-  max-width: 100%;
-}
+.bg-img {
+  /* The image used */
+  background-image: url(../img/table-scene.jpg);
+  min-height: 745px;
 
-.homeContainer {
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* Needed to position the navbar */
   position: relative;
-  text-align: center;
-  color: white;
 }
 
-.homeDiv {
+/* Centered text on bg img */
+.bg-img-text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-size: 5em;
+  text-shadow: 2px 2px 10px #000;
 }
 
-.homeButton {
+.soap-btn {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black; /* Add a text color */
+  padding: 14px 28px; /* Add some padding */
+  cursor: pointer; /* Add a pointer cursor on mouse-over */
+  border-radius: 16px;
   background-color: white;
 }
 
-.homePara {
-  color: #333333;
-  font-size: 20px;
+.soap-btn:hover {
+  text-decoration: none;
+}
+
+/* All the soaps on the homepage */
+
+.home-main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.home-row {
+  margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column (if you want) */
+.home-row,
+.home-row > .home-column {
+  padding: 8px;
+}
+
+/* Create four equal columns that floats next to each other */
+.home-column {
+  float: left;
+  width: 25%;
+}
+
+/* Clear floats after rows */
+.home-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.allSoaps{
+  width:200px;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 900px) {
+  .home-column {
+    width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .home-column {
+    width: 100%;
+  }
 }

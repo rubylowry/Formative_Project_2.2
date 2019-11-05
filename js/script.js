@@ -131,24 +131,35 @@ var soaps = [
     photo2: "img/.jpg",
     photo3: "img/.jpg"
   },
+  {
+    name : "Ginger",
+    id : "S113",
+    use : "Face",
+    scent : "Ginger",
+    price : 20,
+    photo1: "img/ginger.jpg",
+    photo2: "img/.jpg",
+    photo3: "img/.jpg"
+  },
 ];
 
-// All soaps
+// Show all soaps
 
 var id = 101; // Variable is used to generate id's for image
+
 function allSoaps(){
-  document.getElementById('soaps').innerHTML = " "; //to clear the container
+  document.getElementById("soaps").innerHTML = " "; //to clear the container
 for(var i = 0; i < soaps.length; i++) {
   document.getElementById('soaps').innerHTML
   += '</br><h1 class="jumbotron text-primary">' + soaps[i].name + '</h1>'
   + '<div class="row">'
   +'<div class="col">'
-  + '<img id="D' + id.toString() + ' " class="img-thumbnail mt-5 myDogs" src="' + soaps[i].photo1 + ' "  alt="Dog"/>'
+  + '<img id="S' + id.toString() + ' " class="img-thumbnail mt-5 allSoaps" src="' + soaps[i].photo1 + ' "  alt="Soap"/>'
   + '</div>'
   + '<div class="col">'
-  + '</br></br> <h5 class="text-primary" >Breed : ' + soaps[i].breed + '</h5>'
-  + '</br>  <h5 class="text-primary" >Age : ' + soaps[i].age + '</h5>'
-  + '</br>  <h5 class="text-primary" >Height :' + soaps[i].height + '</h5>'
+  + '</br></br> <h5 class="text-primary" >Use : ' + soaps[i].use + '</h5>'
+  + '</br>  <h5 class="text-primary" >Scent : ' + soaps[i].scent + '</h5>'
+  + '</br>  <h5 class="text-primary" >Price : ' + soaps[i].price + '</h5>'
   + '</div>'
   + '</div>';
   id++; // id is incremented automatically
