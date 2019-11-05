@@ -67,6 +67,11 @@
   width: 25%;
 }
 
+.home-img {
+  max-width: 200px;
+  max-height: 200px;
+}
+
 /* Clear floats after rows */
 .home-row:after {
   content: "";

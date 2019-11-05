@@ -127,7 +127,7 @@ var soaps = [
     use : "Hair",
     scent : "No scent",
     price : 28,
-    photo1: "img/.jpg",
+    photo1: "img/mylk.jpg",
     photo2: "img/.jpg",
     photo3: "img/.jpg"
   },
@@ -143,6 +143,7 @@ var soaps = [
   }
 ];
 
+
 // Show all soaps
 
 var id = 101; // Variable is used to generate id's for image
@@ -154,7 +155,7 @@ for(var i = 0; i < soaps.length; i++) {
   += '</br><h1 class="jumbotron text-primary">' + soaps[i].name + '</h1>'
   + '<div class="row">'
   +'<div class="col">'
-  + '<img id="S' + id.toString() + ' " class="img-thumbnail mt-5 allSoaps" src="' + soaps[i].photo1 + ' "  alt="Soap"/>'
+  + '<img id="S' + id.toString() + ' " class="img-thumbnail mt-5 mySoaps" src="' + soaps[i].photo1 + ' "  alt="Soap"/>'
   + '</div>'
   + '<div class="col">'
   + '</br></br> <h5 class="text-primary" >Use : ' + soaps[i].use + '</h5>'
@@ -165,3 +166,26 @@ for(var i = 0; i < soaps.length; i++) {
   id++; // id is incremented automatically
 }
 }
+
+//conditional display
+//beagle
+document.getElementById('summer').addEventListener('click', function(){
+  console.log(soaps);
+  document.getElementById('soaps').innerHTML = " "; //to clear the container
+  for(var i = 0; i < dogs.length; i++) {
+    if (soaps[i].scent === "Citrus") {
+      document.getElementById('soaps').innerHTML
+      += '</br><h1 class="jumbotron text-danger">' + soaps[i].name + '</h1>'
+      + '<div class="row">'
+      +'<div class="col">'
+      + '<img class="img-thumbnail mt-5 mySoaps" src="' + soaps[i].photo1 + ' "  alt="Dog"/>'
+      + '</div>'
+      + '<div class="col">'
+      + '</br></br> Breed : <h5 class="text-danger" >' + soaps[i].use + '</h5>'
+      + '</br> Age : <h5 class="text-danger" > ' + soaps[i].scent + '</h5>'
+      + '</br> Height : <h5 class="text-danger" >' + soaps[i].price + '</h5>'
+      + '</div>'
+      + '</div>';
+   }
+  }
+});
