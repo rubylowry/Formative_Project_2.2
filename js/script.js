@@ -143,6 +143,7 @@ var soaps = [
   }
 ];
 
+console.log(soaps);
 
 // Show all soaps
 
