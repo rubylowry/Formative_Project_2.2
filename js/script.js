@@ -140,7 +140,7 @@ var soaps = [
     photo1: "img/ginger.jpg",
     photo2: "img/.jpg",
     photo3: "img/.jpg"
-  },
+  }
 ];
 
 // Show all soaps
@@ -148,7 +148,7 @@ var soaps = [
 var id = 101; // Variable is used to generate id's for image
 
 function allSoaps(){
-  document.getElementById("soaps").innerHTML = " "; //to clear the container
+  document.getElementById('soaps').innerHTML = " "; //to clear the container
 for(var i = 0; i < soaps.length; i++) {
   document.getElementById('soaps').innerHTML
   += '</br><h1 class="jumbotron text-primary">' + soaps[i].name + '</h1>'
