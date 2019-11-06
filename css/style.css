@@ -52,7 +52,8 @@
 }
 
 .home-row {
-  margin: 8px -16px;
+  margin-top: 0px;
+  margin-left: 5px;
 }
 
 /* Add padding BETWEEN each column (if you want) */
@@ -86,8 +87,22 @@
   text-align: center;
 }
 
-.allSoaps{
-  width:200px;
+.content-header {
+  font-size: 1.5em;
+  text-align: left;
+}
+
+.content-text {
+  text-align: left;
+  font-size: 15px;
+}
+
+.mySoaps {
+  text-align: center;
+  max-width: 400px;
+  min-width: 400px;
+  max-height: 400px;
+  min-height: 400px;
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
@@ -102,4 +117,18 @@
   .home-column {
     width: 100%;
   }
+  .bg-img {
+    width: 100%;
+  }
+  .bg-img-text {
+    font-size: 4em;
+  }
+}
+
+#soaps {
+  margin: 20px 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: flex-start;
+  justify-content: space-between;
 }

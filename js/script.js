@@ -7,7 +7,7 @@ var soaps = [
     use : "Body",
     scent : "Cinnamon",
     price : 20,
-    photo1: "img/.jpg",
+    photo1: "img/chai.jpg",
     photo2: "img/.jpg",
     photo3: "img/.jpg",
   },
@@ -27,7 +27,7 @@ var soaps = [
     use : "Body",
     scent : "Lavender",
     price : 22,
-    photo1: "img/.jpg",
+    photo1: "img/mountain.jpg",
     photo2: "img/.jpg",
     photo3: "img/.jpg"
   },
@@ -35,9 +35,9 @@ var soaps = [
     name : "Rosie",
     id : "S104",
     use : "Skin",
-    scent : "Citrus",
+    scent : "Rose",
     price : 26,
-    photo1: "img/.jpg",
+    photo1: "img/rosie.jpg",
     photo2: "img/.jpg",
     photo3: "img/.jpg"
   },
@@ -47,17 +47,17 @@ var soaps = [
     use : "Hair",
     scent : "Spearmint",
     price : 30,
-    photo1: "img/.jpg",
+    photo1: "img/night-sky.jpg",
     photo2: "img/.jpg",
     photo3: "img/.jpg"
   },
   {
-    name : "White Tea",
+    name : "Honeybee",
     id : "S106",
     use : "Face",
     scent : "No scent",
     price : 30,
-    photo1: "img/.jpg",
+    photo1: "img/honeybee.jpg",
     photo2: "img/.jpg",
     photo3: "img/.jpg"
   },
@@ -77,7 +77,7 @@ var soaps = [
     use : "Body",
     scent : "Vanilla",
     price : 36,
-    photo1: "img/.jpg",
+    photo1: "img/simple-is-best.jpg",
     photo2: "img/.jpg",
     photo3: "img/.jpg"
   },
@@ -92,12 +92,12 @@ var soaps = [
     photo3: "img/.jpg"
   },
   {
-    name : "Beach",
+    name : "Tropical Beach",
     id : "S110",
     use : "Body",
     scent : "Citrus",
     price : 33,
-    photo1: "img/.jpg",
+    photo1: "img/citrus.jpg",
     photo2: "img/.jpg",
     photo3: "img/.jpg"
   },
@@ -117,12 +117,12 @@ var soaps = [
     use : "Hair",
     scent : "Spearmint",
     price : 28,
-    photo1: "img/.jpg",
+    photo1: "img/mint-bar.jpg",
     photo2: "img/.jpg",
     photo3: "img/.jpg"
   },
   {
-    name : "Mylk",
+    name : "Oat Mylk",
     id : "S112",
     use : "Hair",
     scent : "No scent",
@@ -149,44 +149,82 @@ console.log(soaps);
 
 var id = 101; // Variable is used to generate id's for image
 
-function allSoaps(){
-  document.getElementById('soaps').innerHTML = " "; //to clear the container
-for(var i = 0; i < soaps.length; i++) {
-  document.getElementById('soaps').innerHTML
-  += '</br><h1 class="jumbotron text-primary">' + soaps[i].name + '</h1>'
-  + '<div class="row">'
-  +'<div class="col">'
-  + '<img id="S' + id.toString() + ' " class="img-thumbnail mt-5 mySoaps" src="' + soaps[i].photo1 + ' "  alt="Soap"/>'
-  + '</div>'
-  + '<div class="col">'
-  + '</br></br> <h5 class="text-primary" >Use : ' + soaps[i].use + '</h5>'
-  + '</br>  <h5 class="text-primary" >Scent : ' + soaps[i].scent + '</h5>'
-  + '</br>  <h5 class="text-primary" >Price : ' + soaps[i].price + '</h5>'
-  + '</div>'
-  + '</div>';
-  id++; // id is incremented automatically
+
+// Function that includes all soaps and their properties
+
+function allSoaps(i){
+  for(var i = 0; i < soaps.length; i++) {
+  // id is incremented automatically
+  displaySoaps(i);
 }
 }
 
-//conditional display
-//beagle
+function displaySoaps(j){
+  document.getElementById('soaps').innerHTML
+  += '<div class="row">'
+  + '<div class="column">'
+  + '<div class="content">'
+  + '<div class="content-header">' + soaps[j].name + '</div>'
+  + '</br> <img id="S' + id.toString() + ' " class="img-thumbnail mySoaps" src="' + soaps[j].photo1 + ' "  alt="Soap"/>'
+  + '</div>'
+  + '<div class="col">'
+  + '</br>  <div class="content-text">Use: ' + soaps[j].use + '</div>'
+  + '</br>  <div class="content-text">Scent: ' + soaps[j].scent + '</div>'
+  + '</br>  <div class="content-text">Price: $' + soaps[j].price + '</div>'
+  + '</div>'
+  + '</div>'
+  + '</div>'
+  + '</div>';
+  id++;
+}
+// ALL SOAPS WILL APPEAR HERE
+// allSoaps();
+
+
+// Conditional display
+// Summer
 document.getElementById('summer').addEventListener('click', function(){
   console.log(soaps);
   document.getElementById('soaps').innerHTML = " "; //to clear the container
-  for(var i = 0; i < dogs.length; i++) {
+  for(var i = 0; i < soaps.length; i++) {
     if (soaps[i].scent === "Citrus") {
-      document.getElementById('soaps').innerHTML
-      += '</br><h1 class="jumbotron text-danger">' + soaps[i].name + '</h1>'
-      + '<div class="row">'
-      +'<div class="col">'
-      + '<img class="img-thumbnail mt-5 mySoaps" src="' + soaps[i].photo1 + ' "  alt="Dog"/>'
-      + '</div>'
-      + '<div class="col">'
-      + '</br></br> Breed : <h5 class="text-danger" >' + soaps[i].use + '</h5>'
-      + '</br> Age : <h5 class="text-danger" > ' + soaps[i].scent + '</h5>'
-      + '</br> Height : <h5 class="text-danger" >' + soaps[i].price + '</h5>'
-      + '</div>'
-      + '</div>';
+      displaySoaps(i);
+   }
+  }
+});
+
+// Face products
+
+document.getElementById('face').addEventListener('click', function(){
+  console.log(soaps);
+  document.getElementById('soaps').innerHTML = " "; //to clear the container
+  for(var i = 0; i < soaps.length; i++) {
+    if (soaps[i].use === "Face") {
+      displaySoaps(i);
+   }
+  }
+});
+
+// Body products
+
+document.getElementById('body').addEventListener('click', function(){
+  console.log(soaps);
+  document.getElementById('soaps').innerHTML = " "; //to clear the container
+  for(var i = 0; i < soaps.length; i++) {
+    if (soaps[i].use === "Body") {
+      displaySoaps(i);
+   }
+  }
+});
+
+// Hair products
+
+document.getElementById('hair').addEventListener('click', function(){
+  console.log(soaps);
+  document.getElementById('soaps').innerHTML = " "; //to clear the container
+  for(var i = 0; i < soaps.length; i++) {
+    if (soaps[i].use === "Hair") {
+      displaySoaps(i);
    }
   }
 });
