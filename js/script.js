@@ -12,17 +12,17 @@ var soaps = [
     photo3: "img/.jpg",
   },
   {
-    name : "Mystery",
+    name : "Petal",
     id : "S102",
     use : "Body",
-    scent : "Ylang Ylang",
+    scent : "Rose",
     price : 22,
-    photo1: "img/.jpg",
+    photo1: "img/rose petal.jpg",
     photo2: "img/.jpg",
     photo3: "img/.jpg"
   },
   {
-    name : "Mountain",
+    name : "Blue Mountain",
     id : "S103",
     use : "Body",
     scent : "Lavender",
@@ -67,7 +67,7 @@ var soaps = [
     use : "Face",
     scent : "Lavender",
     price : 26,
-    photo1: "img/.jpg",
+    photo1: "img/after sunset.jpg",
     photo2: "img/.jpg",
     photo3: "img/.jpg"
   },
@@ -87,7 +87,7 @@ var soaps = [
     use : "Hair",
     scent : "Ylang Ylang",
     price : 30,
-    photo1: "img/.jpg",
+    photo1: "img/crisp.jpg",
     photo2: "img/.jpg",
     photo3: "img/.jpg"
   },
@@ -107,7 +107,7 @@ var soaps = [
     use : "Face",
     scent : "Vanilla",
     price : 26,
-    photo1: "img/.jpg",
+    photo1: "img/berry kisses.jpg",
     photo2: "img/.jpg",
     photo3: "img/.jpg"
   },
@@ -128,6 +128,26 @@ var soaps = [
     scent : "No scent",
     price : 28,
     photo1: "img/mylk.jpg",
+    photo2: "img/.jpg",
+    photo3: "img/.jpg"
+  },
+  {
+    name : "Lavender Dreams",
+    id : "S112",
+    use : "Body",
+    scent : "Lavender",
+    price : 28,
+    photo1: "img/lavender-dreams.jpg",
+    photo2: "img/.jpg",
+    photo3: "img/.jpg"
+  },
+  {
+    name : "Latte Art",
+    id : "S112",
+    use : "Hair",
+    scent : "No scent",
+    price : 28,
+    photo1: "img/latte art.jpg",
     photo2: "img/.jpg",
     photo3: "img/.jpg"
   },
@@ -178,19 +198,17 @@ function displaySoaps(j){
   id++;
 }
 // ALL SOAPS WILL APPEAR HERE
-// allSoaps();
+allSoaps();
 
 
 // Conditional display
-// Summer
-document.getElementById('summer').addEventListener('click', function(){
+// Display all products
+document.getElementById('products').addEventListener('click', function(){
   console.log(soaps);
   document.getElementById('soaps').innerHTML = " "; //to clear the container
   for(var i = 0; i < soaps.length; i++) {
-    if (soaps[i].scent === "Citrus") {
       displaySoaps(i);
    }
-  }
 });
 
 // Face products
@@ -227,4 +245,45 @@ document.getElementById('hair').addEventListener('click', function(){
       displaySoaps(i);
    }
   }
+});
+
+// Display modal
+
+$('.soaps').on('click', function(){
+  $('.myModal').show();
+  $('#hideContainer').hide();
+  for (var i = 0; i < soaps.length ; i++) {
+    //id property of soaps is checked for  equivalence with the image id of the clicked element
+    if (this.id.trim() == soaps[i].id.trim()) {
+      //remove leading and trailing space in the string while trying to match
+      document.getElementById('modalContent').innerHTML
+      += '<div class="jumbotrons ml-5 text-info"> ' + soaps[i].name + '</br>'
+      + soaps[i].use + '</br>' + soaps[i].scent + '</br>'
+      + 'Height : ' + soaps[i].price + '</br>' + 'Age :' + '</div>' + '<br>'
+      + '<div id="carouselExampleIndicators" class="carousel slide myCarousel" data-ride="carousel">'
+      +      '<ol class="carousel-indicators">'
+      +         '<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>'
+      +         '<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>'
+      +         '<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>'
+      +      '</ol> <div class="carousel-inner"><div class="carousel-item active">'
+      + '<img class="card-thumbnail  myDogs modalDog width="200" height="120" src="' + soaps[i].photo + '"  alt="Dog"/>'
+      + '</div> <div class="carousel-item">'
+      + '<img class="card-thumbnail  myDogs modalDog" src="' + soaps[i].photo1 + '"  alt="Soap"/>'
+      + '</div><div class="carousel-item">'
+      + '<img class="card-thumbnail  myDogs modalDog" src="' + soaps[i].photo2 + '"  alt="Soap"/>'
+      + '</div> </div>'
+      + '<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">'
+      + '<span class="carousel-control-prev-icon" aria-hidden="true"></span>'
+      + '<span class="sr-only">Previous</span> </a>'
+      + '<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">'
+      + '<span class="carousel-control-next-icon" aria-hidden="true"></span>'
+      + '<span class="sr-only">Next</span> </a></div>';
+      + '</br>'
+      }
+    }
+});
+
+$('.closeBar').on('click', function(){
+  $('.myModal').hide();
+  $('#hideContainer').show();
 });
