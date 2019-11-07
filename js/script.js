@@ -18,8 +18,8 @@ var soaps = [
     scent : "Rose",
     price : 22,
     photo1: "img/rose petal.jpg",
-    photo2: "img/.jpg",
-    photo3: "img/.jpg"
+    photo2: "img/dried petals.jpg",
+    photo3: "img/olibanum oil.jpg"
   },
   {
     name : "Blue Mountain",
@@ -185,12 +185,12 @@ function displaySoaps(j){
   + '<div class="column">'
   + '<div class="content">'
   + '<div class="content-header">' + soaps[j].name + '</div>'
-  + '</br> <img id="S' + id.toString() + ' " class="img-thumbnail mySoaps" src="' + soaps[j].photo1 + ' "  alt="Soap"/>'
+  + '<img id="S' + id.toString() + ' " class="img-thumbnail mySoaps" src="' + soaps[j].photo1 + ' "  alt="Soap"/>'
   + '</div>'
   + '<div class="col">'
-  + '</br>  <div class="content-text">Use: ' + soaps[j].use + '</div>'
-  + '</br>  <div class="content-text">Scent: ' + soaps[j].scent + '</div>'
-  + '</br>  <div class="content-text">Price: $' + soaps[j].price + '</div>'
+  + '<div class="content-text">Use: ' + soaps[j].use + '</div>'
+  + '<div class="content-text">Scent: ' + soaps[j].scent + '</div>'
+  + '<div class="content-text">Price: $' + soaps[j].price + '</div>'
   + '</div>'
   + '</div>'
   + '</div>'
@@ -247,30 +247,55 @@ document.getElementById('hair').addEventListener('click', function(){
   }
 });
 
-// Display modal
 
-$('.soaps').on('click', function(){
-  $('.myModal').show();
+// Scent: Rose
+
+document.getElementById('rose-scent').addEventListener('click', function(){
+  document.getElementById('soaps').innerHTML = " "; //to clear the container
+  for(var i = 0; i < soaps.length; i++) {
+    if (soaps[i].scent === "Rose") {
+      displaySoaps(i);
+   }
+  }
+});
+
+// Scent: Cinnamon
+
+document.getElementById('cinnamon-scent').addEventListener('click', function(){
+  document.getElementById('soaps').innerHTML = " "; //to clear the container
+  for(var i = 0; i < soaps.length; i++) {
+    if (soaps[i].scent === "Cinnamon") {
+      displaySoaps(i);
+   }
+  }
+});
+
+// <button onclick="$('.overlay').show();">Open modal</button>
+
+// Display modal
+$('.overlay').hide();
+$('.mySoaps').on('click', function(){
+  $('.overlay').show();
   $('#hideContainer').hide();
   for (var i = 0; i < soaps.length ; i++) {
     //id property of soaps is checked for  equivalence with the image id of the clicked element
     if (this.id.trim() == soaps[i].id.trim()) {
       //remove leading and trailing space in the string while trying to match
       document.getElementById('modalContent').innerHTML
-      += '<div class="jumbotrons ml-5 text-info"> ' + soaps[i].name + '</br>'
+      = '<div class="jumbotron ml-5 text-info"> '+ soaps[i].name + '</br>'
       + soaps[i].use + '</br>' + soaps[i].scent + '</br>'
-      + 'Height : ' + soaps[i].price + '</br>' + 'Age :' + '</div>' + '<br>'
+      + 'Price: $' + soaps[i].price + '</div>'
       + '<div id="carouselExampleIndicators" class="carousel slide myCarousel" data-ride="carousel">'
       +      '<ol class="carousel-indicators">'
       +         '<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>'
       +         '<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>'
       +         '<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>'
       +      '</ol> <div class="carousel-inner"><div class="carousel-item active">'
-      + '<img class="card-thumbnail  myDogs modalDog width="200" height="120" src="' + soaps[i].photo + '"  alt="Dog"/>'
+      + '<img class="card-thumbnail  mySoaps modalSoap width="200" height="120" src="' + soaps[i].photo1 + '"  alt="Soap"/>'
       + '</div> <div class="carousel-item">'
-      + '<img class="card-thumbnail  myDogs modalDog" src="' + soaps[i].photo1 + '"  alt="Soap"/>'
+      + '<img class="card-thumbnail  mySoaps modalSoap" src="' + soaps[i].photo2 + '"  alt="Soap"/>'
       + '</div><div class="carousel-item">'
-      + '<img class="card-thumbnail  myDogs modalDog" src="' + soaps[i].photo2 + '"  alt="Soap"/>'
+      + '<img class="card-thumbnail  mySoaps modalSoap" src="' + soaps[i].photo3 + '"  alt="Soap"/>'
       + '</div> </div>'
       + '<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">'
       + '<span class="carousel-control-prev-icon" aria-hidden="true"></span>'
@@ -278,12 +303,26 @@ $('.soaps').on('click', function(){
       + '<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">'
       + '<span class="carousel-control-next-icon" aria-hidden="true"></span>'
       + '<span class="sr-only">Next</span> </a></div>';
-      + '</br>'
       }
     }
 });
 
 $('.closeBar').on('click', function(){
-  $('.myModal').hide();
+  $('.overlay').hide();
   $('#hideContainer').show();
+});
+
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//   if (event.target == myModal) {
+//     myModal.style.display = "none";
+//   }
+// }
+
+
+$('.overlay').on('click', function(e) {
+  if (e.target !== this) {
+    return;
+  }
+  $('.overlay').hide();
 });

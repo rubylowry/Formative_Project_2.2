@@ -6,13 +6,12 @@
 
    <!-- Bootstrap CSS -->
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
 <link rel="stylesheet" href="css/style.css">
     <title>SANDALWOOD & CO</title>
 
   </head>
   <body>
-<div id="hideContainer">
     <!-- Navigation  -->
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -32,12 +31,28 @@
           SORT BY
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a id="face" class="dropdown-item" href="#">Face</a>
-          <a id="body" class="dropdown-item" href="#">Body</a>
-          <a id="hair" class="dropdown-item" href="#">Hair</a>
+          <div class="nav-title">PRODUCT TYPES:</div>
           <div class="dropdown-divider"></div>
-          <a id="highLow" class="dropdown-item" href="#">Price: high to low</a>
-          <a id="lowHigh" class="dropdown-item" href="#">Price: low to high</a>
+          <a id="face" class="dropdown-item nav-header" href="#">Face</a>
+          <a id="body" class="dropdown-item nav-header" href="#">Body</a>
+          <a id="hair" class="dropdown-item nav-header" href="#">Hair</a>
+          <div class="dropdown-divider"></div>
+          <div class="nav-title">PRICE:</div>
+          <div class="dropdown-divider"></div>
+          <a id="highLow" class="dropdown-item nav-header" href="#">Price: high to low</a>
+          <a id="lowHigh" class="dropdown-item nav-header" href="#">Price: low to high</a>
+          <div class="dropdown-divider"></div>
+          <div class="nav-title">SCENT:</div>
+          <div class="dropdown-divider"></div>
+          <a id="rose-scent" class="dropdown-item nav-header" onClick="document.getElementById('rose-scent').scrollIntoView();">Rose</a>
+          <a id="cinnamon-scent" class="dropdown-item nav-header" href="#">Cinnamon</a>
+          <a id="lavender-scent" class="dropdown-item nav-header" href="#">Lavender</a>
+          <a id="vanilla-scent" class="dropdown-item nav-header" href="#">Vanilla</a>
+          <a id="spearmint-scent" class="dropdown-item nav-header" href="#">Spearmint</a>
+          <a id="citrus-scent" class="dropdown-item nav-header" href="#">Citrus</a>
+          <a id="ginger-scent" class="dropdown-item nav-header" href="#">Ginger</a>
+          <a id="ylang-scent" class="dropdown-item nav-header" href="#">Ylang Ylang</a>
+          <a id="no-scent" class="dropdown-item nav-header" href="#">No scent</a>
         </div>
       </li>
       </ul>
@@ -53,20 +68,22 @@
 
 <div class="bg-img">
 <div class="bg-img-text">Sandalwood & Co</div>
-  <button id="products" type="button" class="soap-btn w3-hover-light-grey">All Products</button>
+  <button id="products" type="button" class="soap-btn" onClick="document.getElementById('products').scrollIntoView();">VIEW ALL PRODUCTS</button>
 </div>
 
 
-<div id="soaps" class="row"></div>
+<div id="soaps" class="row">
 
+</div>
 
+<div class="overlay">
 <div class="myModal">
-      <div class="closeBar">
-        &times;
-    </div>
-    <div id="modalContent" class="">
-    </div>
+      <div class="closeBar">&times;</div>
+    <div id="modalContent" ></div>
 </div>
+</div>
+
+<div id="hideContainer">
 <!--
 <div class="modal myModal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
