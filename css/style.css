@@ -9,7 +9,7 @@ html {
 .bg-img {
   /* The image used */
   background-image: url(../img/marble-bg-img.jpg);
-  min-height: 1100px;
+  min-height: 1000px;
 
   /* Center and scale the image nicely */
   background-position: center;
@@ -24,7 +24,7 @@ html {
 .bg-img-text {
   font-family: FreeMono;
   position: absolute;
-  top: 40%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -51,7 +51,7 @@ html {
 .soap-btn {
   font-weight: bold;
   position: absolute;
-  top: 80%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white; /* Add a text color */
@@ -105,7 +105,7 @@ html {
 /* Content */
 .content {
   background-color: white;
-  padding: 10px;
+  padding: 30px;
   text-align: center;
 }
 
@@ -149,14 +149,31 @@ html {
   .bg-img-text {
     font-size: 4em;
   }
+  #soaps {
+    margin: 40px 20px;
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: flex-start;
+    justify-content: center; */
+  }
+  .bg-img {
+    /* The image used */
+    background-image: url(../img/marble-bg-img.jpg);
+    min-height: 600px;
+  }
+  .soap-btn {
+    margin-top: 80px;
+  }
 }
+/* Responsive layout end */
 
 #soaps {
-  margin: 20px 20px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: flex-start;
-  justify-content: space-between;
+  margin: 30px;
+  /* margin-top: 10px; */
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; */
+  /* justify-content: space-between; */
 }
 
 .overlay {
@@ -196,6 +213,21 @@ html {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+/* Modal style here */
+
+.myJumbo {
+  margin-top: 100px;
+  color: white;
+  background: #000;
+  text-align: center;
+  border-radius: 30px;
+}
+
+.soapName {
+  font-size: 30px;
+  font-family: FreeMono;
 }
 
 #modalContent {

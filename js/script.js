@@ -181,19 +181,16 @@ function allSoaps(i){
 
 function displaySoaps(j){
   document.getElementById('soaps').innerHTML
-  += '<div class="row">'
-  + '<div class="column">'
-  + '<div class="content">'
+  // += '<div class="row">'
+  // + '<div class="column">'
+  += '<div class="content">'
   + '<div class="content-header">' + soaps[j].name + '</div>'
   + '<img id="S' + id.toString() + ' " class="img-thumbnail mySoaps" src="' + soaps[j].photo1 + ' "  alt="Soap"/>'
-  + '</div>'
-  + '<div class="col">'
   + '<div class="content-text">Use: ' + soaps[j].use + '</div>'
   + '<div class="content-text">Scent: ' + soaps[j].scent + '</div>'
   + '<div class="content-text">Price: $' + soaps[j].price + '</div>'
-  + '</div>'
-  + '</div>'
-  + '</div>'
+  // + '</div>'
+  // + '</div>'
   + '</div>';
   id++;
 }
@@ -282,16 +279,20 @@ $('.mySoaps').on('click', function(){
     if (this.id.trim() == soaps[i].id.trim()) {
       //remove leading and trailing space in the string while trying to match
       document.getElementById('modalContent').innerHTML
-      = '<div class="jumbotron ml-5 text-info"> '+ soaps[i].name + '</br>'
-      + soaps[i].use + '</br>' + soaps[i].scent + '</br>'
-      + 'Price: $' + soaps[i].price + '</div>'
+      = '<div class="myJumbo"> '
+      + '<div class="soapName">'
+      + soaps[i].name + '</div>'
+      + '</br>For: ' + soaps[i].use
+      + '</br>Scent: ' + soaps[i].scent
+      + '</br>' + 'Price: $' + soaps[i].price
+      + '</div>'
       + '<div id="carouselExampleIndicators" class="carousel slide myCarousel" data-ride="carousel">'
       +      '<ol class="carousel-indicators">'
       +         '<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>'
       +         '<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>'
       +         '<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>'
       +      '</ol> <div class="carousel-inner"><div class="carousel-item active">'
-      + '<img class="card-thumbnail  mySoaps modalSoap width="200" height="120" src="' + soaps[i].photo1 + '"  alt="Soap"/>'
+      + '<img class="card-thumbnail  mySoaps modalSoap" src="' + soaps[i].photo1 + '"  alt="Soap"/>'
       + '</div> <div class="carousel-item">'
       + '<img class="card-thumbnail  mySoaps modalSoap" src="' + soaps[i].photo2 + '"  alt="Soap"/>'
       + '</div><div class="carousel-item">'
