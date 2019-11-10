@@ -184,11 +184,13 @@ function displaySoaps(j){
   // += '<div class="row">'
   // + '<div class="column">'
   += '<div class="content">'
-  + '<div class="content-header">' + soaps[j].name + '</div>'
+  // + '<div class="content-header">' + soaps[j].name + '</div>'
   + '<img id="S' + id.toString() + ' " class="img-thumbnail mySoaps" src="' + soaps[j].photo1 + ' "  alt="Soap"/>'
-  + '<div class="content-text">Use: ' + soaps[j].use + '</div>'
-  + '<div class="content-text">Scent: ' + soaps[j].scent + '</div>'
-  + '<div class="content-text">Price: $' + soaps[j].price + '</div>'
+  // + '<div class="mainText">'
+  // + '<div class="content-text">Use: ' + soaps[j].use + '</div>'
+  // + '<div class="content-text">Scent: ' + soaps[j].scent + '</div>'
+  // + '<div class="content-text">Price: $' + soaps[j].price + '</div>'
+  // + '</div>'
   // + '</div>'
   // + '</div>'
   + '</div>';
@@ -313,13 +315,6 @@ $('.closeBar').on('click', function(){
   $('#hideContainer').show();
 });
 
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//   if (event.target == myModal) {
-//     myModal.style.display = "none";
-//   }
-// }
-
 
 $('.overlay').on('click', function(e) {
   if (e.target !== this) {
@@ -327,3 +322,17 @@ $('.overlay').on('click', function(e) {
   }
   $('.overlay').hide();
 });
+
+const searchBar = document.forms['search-soaps'].querySelector('input');
+searchBar.addEventListener('keyup', function(e){
+  const term = e.target.value.toLowerCase();
+  const theSoaps = list.getElementsByTagName('li');
+  Array.from(theSoaps).forEach(function(theSoaps){
+    const name = theSoap.firstElementChild.textContent;
+    if(title.toLowerCase().indexOf(term)!= -1){
+      theSoap.style.display = 'block';
+    } else {
+      allSoap.style.display = 'none';
+    }
+  })
+})
