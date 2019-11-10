@@ -123,17 +123,17 @@ var soaps = [
   },
   {
     name : "Oat Mylk",
-    id : "S112",
+    id : "S113",
     use : "Hair",
     scent : "No scent",
     price : 28,
-    photo1: "img/mylk.jpg",
-    photo2: "img/.jpg",
-    photo3: "img/.jpg"
+    photo1: "img/oatmeal.jpg",
+    photo2: "img/oatmeal-1.jpg",
+    photo3: "img/oatmeal-2.jpg"
   },
   {
     name : "Lavender Dreams",
-    id : "S112",
+    id : "S114",
     use : "Body",
     scent : "Lavender",
     price : 28,
@@ -142,24 +142,44 @@ var soaps = [
     photo3: "img/.jpg"
   },
   {
-    name : "Latte Art",
-    id : "S112",
+    name : "Candy Floss",
+    id : "S115",
     use : "Hair",
     scent : "No scent",
     price : 28,
-    photo1: "img/latte art.jpg",
-    photo2: "img/.jpg",
-    photo3: "img/.jpg"
+    photo1: "img/candyfloss.jpg",
+    photo2: "img/candyfloss-1.jpg",
+    photo3: "img/candyfloss-2.jpg"
+  },
+  {
+    name : "Breakfast Bar",
+    id : "S116",
+    use : "Body",
+    scent : "Citrus",
+    price : 28,
+    photo1: "img/breakfast-bar.jpg",
+    photo2: "img/breakfast-bar-1.jpg",
+    photo3: "img/breakfast-bar-2.jpg"
   },
   {
     name : "Ginger",
-    id : "S113",
+    id : "S117",
     use : "Face",
     scent : "Ginger",
     price : 20,
     photo1: "img/ginger.jpg",
     photo2: "img/.jpg",
     photo3: "img/.jpg"
+  },
+  {
+    name : "Tiramisu",
+    id : "S118",
+    use : "Face",
+    scent : "Vanilla",
+    price : 20,
+    photo1: "img/tiramisu.jpg",
+    photo2: "img/tiramisu-1.jpg",
+    photo3: "img/tiramisu-2.jpg"
   }
 ];
 
@@ -169,6 +189,8 @@ console.log(soaps);
 
 var id = 101; // Variable is used to generate id's for image
 
+// ALL SOAPS WILL APPEAR HERE
+allSoaps();
 
 // Function that includes all soaps and their properties
 
@@ -196,8 +218,6 @@ function displaySoaps(j){
   + '</div>';
   id++;
 }
-// ALL SOAPS WILL APPEAR HERE
-allSoaps();
 
 
 // Conditional display
@@ -218,7 +238,7 @@ document.getElementById('face').addEventListener('click', function(){
   for(var i = 0; i < soaps.length; i++) {
     if (soaps[i].use === "Face") {
       displaySoaps(i);
-   }
+    }
   }
 });
 
@@ -230,8 +250,8 @@ document.getElementById('body').addEventListener('click', function(){
   for(var i = 0; i < soaps.length; i++) {
     if (soaps[i].use === "Body") {
       displaySoaps(i);
-   }
   }
+}
 });
 
 // Hair products
@@ -242,7 +262,10 @@ document.getElementById('hair').addEventListener('click', function(){
   for(var i = 0; i < soaps.length; i++) {
     if (soaps[i].use === "Hair") {
       displaySoaps(i);
-   }
+      $('.mySoaps').on('click', function(){
+        usesModal('hair');
+     });
+    }
   }
 });
 
@@ -254,6 +277,9 @@ document.getElementById('rose-scent').addEventListener('click', function(){
   for(var i = 0; i < soaps.length; i++) {
     if (soaps[i].scent === "Rose") {
       displaySoaps(i);
+      $('.mySoaps').on('click', function(){
+        showModal("Rose");
+   });
    }
   }
 });
@@ -265,13 +291,64 @@ document.getElementById('cinnamon-scent').addEventListener('click', function(){
   for(var i = 0; i < soaps.length; i++) {
     if (soaps[i].scent === "Cinnamon") {
       displaySoaps(i);
-   }
-  }
+      $('.mySoaps').on('click', function(){
+        showModal('cinnamon');
+   });
+ }
+}
 });
 
-// <button onclick="$('.overlay').show();">Open modal</button>
+// Scent: Citrus
 
-// Display modal
+document.getElementById('citrus-scent').addEventListener('click', function(){
+  document.getElementById('soaps').innerHTML = " "; //to clear the container
+  for(var i = 0; i < soaps.length; i++) {
+    if (soaps[i].scent === "Citrus") {
+      displaySoaps(i);
+      $('.mySoaps').on('click', function(){
+          showModal('citrus');
+   });
+ }
+}
+});
+
+
+// Modal information
+
+function modalInfo(i){
+  document.getElementById('modalContent').innerHTML = '<div class="myJumbo"> '
+  + '<div class="soapName">'
+  + soaps[i].name + '</div>'
+  + '</br>For: ' + soaps[i].use
+  + '</br>Scent: ' + soaps[i].scent
+  + '</br>' + 'Price: $' + soaps[i].price
+  + '</div>'
+  + '<div id="carouselExampleIndicators" class="carousel slide myCarousel" data-ride="carousel">'
+  +      '<ol class="carousel-indicators">'
+  +         '<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>'
+  +         '<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>'
+  +         '<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>'
+  +      '</ol> <div class="carousel-inner"><div class="carousel-item active">'
+  + '<img class="card-thumbnail  mySoaps modalSoap" src="' + soaps[i].photo1 + '"  alt="Soap"/>'
+  + '</div> <div class="carousel-item">'
+  + '<img class="card-thumbnail  mySoaps modalSoap" src="' + soaps[i].photo2 + '"  alt="Soap"/>'
+  + '</div><div class="carousel-item">'
+  + '<img class="card-thumbnail  mySoaps modalSoap" src="' + soaps[i].photo3 + '"  alt="Soap"/>'
+  + '</div> </div>'
+  + '<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">'
+  + '<span class="carousel-control-prev-icon" aria-hidden="true"></span>'
+  + '<span class="sr-only">Previous</span> </a>'
+  + '<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">'
+  + '<span class="carousel-control-next-icon" aria-hidden="true"></span>'
+  + '<span class="sr-only">Next</span> </a></div>';
+}
+
+
+homeModal();
+
+// Displays modals on homepage
+
+function homeModal(){
 $('.overlay').hide();
 $('.mySoaps').on('click', function(){
   $('.overlay').show();
@@ -280,35 +357,52 @@ $('.mySoaps').on('click', function(){
     //id property of soaps is checked for  equivalence with the image id of the clicked element
     if (this.id.trim() == soaps[i].id.trim()) {
       //remove leading and trailing space in the string while trying to match
-      document.getElementById('modalContent').innerHTML
-      = '<div class="myJumbo"> '
-      + '<div class="soapName">'
-      + soaps[i].name + '</div>'
-      + '</br>For: ' + soaps[i].use
-      + '</br>Scent: ' + soaps[i].scent
-      + '</br>' + 'Price: $' + soaps[i].price
-      + '</div>'
-      + '<div id="carouselExampleIndicators" class="carousel slide myCarousel" data-ride="carousel">'
-      +      '<ol class="carousel-indicators">'
-      +         '<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>'
-      +         '<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>'
-      +         '<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>'
-      +      '</ol> <div class="carousel-inner"><div class="carousel-item active">'
-      + '<img class="card-thumbnail  mySoaps modalSoap" src="' + soaps[i].photo1 + '"  alt="Soap"/>'
-      + '</div> <div class="carousel-item">'
-      + '<img class="card-thumbnail  mySoaps modalSoap" src="' + soaps[i].photo2 + '"  alt="Soap"/>'
-      + '</div><div class="carousel-item">'
-      + '<img class="card-thumbnail  mySoaps modalSoap" src="' + soaps[i].photo3 + '"  alt="Soap"/>'
-      + '</div> </div>'
-      + '<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">'
-      + '<span class="carousel-control-prev-icon" aria-hidden="true"></span>'
-      + '<span class="sr-only">Previous</span> </a>'
-      + '<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">'
-      + '<span class="carousel-control-next-icon" aria-hidden="true"></span>'
-      + '<span class="sr-only">Next</span> </a></div>';
+      modalInfo(i);
       }
     }
-});
+  });
+}
+
+
+// Display modal with SCENT property
+function showModal(scent){
+$('.overlay').hide();
+$('.mySoaps').on('click', function(){
+  $('.overlay').show();
+  $('#hideContainer').hide();
+  for (var i = 0; i < soaps.length ; i++) {
+    //id property of soaps is checked for  equivalence with the image id of the clicked element
+    // if (this.id.trim() == soaps[i].id.trim()) {
+    console.log(scent,soaps[i].scent);
+
+    if (soaps[i].scent.toLowerCase() === scent.toLowerCase()){
+      //remove leading and trailing space in the string while trying to match
+      modalInfo(i);
+    }
+  }
+  });
+}
+
+// Display modal with SCENT property
+function usesModal(data){
+$('.overlay').hide();
+$('.mySoaps').on('click', function(){
+  $('.overlay').show();
+  $('#hideContainer').hide();
+  for (var i = 0; i < soaps.length ; i++) {
+    //id property of soaps is checked for  equivalence with the image id of the clicked element
+    // if (this.id.trim() == soaps[i].id.trim()) {
+    console.log(data,soaps[i].use);
+    if (soaps[i].use.toLowerCase() === data.toLowerCase()){
+      //remove leading and trailing space in the string while trying to match
+      modalInfo(i);
+    }
+  }
+  });
+}
+
+
+
 
 $('.closeBar').on('click', function(){
   $('.overlay').hide();
