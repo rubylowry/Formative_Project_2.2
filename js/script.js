@@ -42,7 +42,7 @@ var soaps = [
     photo3: "img/rosie.jpg"
   },
   {
-    name : "Full Moon",
+    name : "Moon River",
     id : 105,
     use : "Hair",
     scent : "Spearmint",
@@ -185,8 +185,7 @@ var soaps = [
 
 console.log(soaps);
 
-soaps.sort();
-console.log(soaps.sort());
+
 
 
 // Show all soaps
@@ -207,20 +206,9 @@ function allSoaps(i){
 
 function displaySoaps(j){
   document.getElementById('soaps').innerHTML
-  // += '<div class="row">'
-  // + '<div class="column">'
   += '<div class="content">'
-  // + '<div class="content-header">' + soaps[j].name + '</div>'
   + '<img id="' + soaps[j].id + ' " class="img-thumbnail mySoaps" src="' + soaps[j].photo1 + ' "  alt="Soap"/>'
-  // + '<div class="mainText">'
-  // + '<div class="content-text">Use: ' + soaps[j].use + '</div>'
-  // + '<div class="content-text">Scent: ' + soaps[j].scent + '</div>'
-  // + '<div class="content-text">Price: $' + soaps[j].price + '</div>'
-  // + '</div>'
-  // + '</div>'
-  // + '</div>'
   + '</div>';
-  // id++;
 }
 
 
@@ -272,82 +260,50 @@ document.getElementById('hair').addEventListener('click', function(){
   }
 });
 
-
 // Scent: Rose
 
-// Function to open the member modal
-function openModal(i){
-   // Shows my custom modal of any particular member that the user clicks on
-   $('.content').on('click', function(){
-       // Shows the id of the fencer that was clicked in the console, used for trouble shooting
-       console.log(this.id);
-       // Reveals the modal that the information is going to be shown in
-       $('.overlay').show();
-       for(i=0; i<soaps.length; i++) {
-           // This looks at the id defined and checksfor equivalence with the fencer's id that was clicked. It will dispaly the information
-           if(this.id == soaps[i].id) {
-               // Prints the dog that was clicked into the modal with the correlating information
-               modalInfo(i);
-           }
-         }
-      });
-    }
-
 document.getElementById('rose-scent').addEventListener('click', function(){
-  document.getElementById('soaps').innerHTML = " "; //to clear the container
-  for(var i = 0; i < soaps.length; i++) {
-    if (soaps[i].scent === "Rose") {
-  document.getElementById('soaps').innerHTML
-      += '<div class="content">'
-
-      + '<img id="' + soaps[j].id + ' " class="img-thumbnail mySoaps" src="' + soaps[j].photo1 + ' "  alt="Soap"/>'
-
-      + '</div>';
-   //    $('.content').on('click', function(){
-   //         openModal(i);
-   // });
-   }
+document.getElementById('soaps').innerHTML = " "; //to clear the container
+var propId= 101;
+var i;
+for ( i = 0; i < soaps.length ; i++) {
+  if (soaps[i].scent.toLowerCase() === 'rose'){
+    //display function
+    document.getElementById('soaps').innerHTML
+    displaySoaps(i);
+    //onclick function
+    $('.mySoaps').on('click', function(){
+      // $('.overlay').hide();
+      // $('.mySoaps').on('click', function(){
+        $('.overlay').show();
+        $('#hideContainer').hide();
+      console.log(this.id);
+      //reusable code ---  make it a function passing parameter
+    for ( i = 0; i < soaps.length ; i++) {
+    if (soaps[i].scent.toLowerCase() === 'rose' && parseInt(this.id) === soaps[i].id){
+    //remove leading and trailing space in the string while trying to match
+    modalInfo(i);
+            }
+          }
+       });
+  propId++;
+    }
   }
 });
 
-// Scent: Cinnamon
-
+// Scent: CINNAMON
 document.getElementById('cinnamon-scent').addEventListener('click', function(){
-  document.getElementById('soaps').innerHTML = " "; //to clear the container
-  for(var i = 0; i < soaps.length; i++) {
-    if (soaps[i].scent === "Cinnamon") {
-      displaySoaps(i);
-      $('.mySoaps').on('click', function(){
-        showModal('cinnamon');
-   });
- }
-}
-});
-
-// Scent: Citrus
-
-document.getElementById('citrus-scent').addEventListener('click', function(){
-  document.getElementById('soaps').innerHTML = " "; //to clear the container
+document.getElementById('soaps').innerHTML = " "; //to clear the container
   // for(var i = 0; i < soaps.length; i++) {
   //   if (soaps[i].scent === "Citrus") {
   //     displaySoaps(i);
-var citrusId= 101;
+var propId= 101;
 var i;
           for ( i = 0; i < soaps.length ; i++) {
-            //id property of soaps is checked for  equivalence with the image id of the clicked element
-            // if (this.id.trim() == soaps[i].id.trim()) {
-           //  console.log(data,soaps[i].scent);
-
-
-            if (soaps[i].scent.toLowerCase() === 'citrus'){
+            if (soaps[i].scent.toLowerCase() === 'cinnamon'){
               //display function
               document.getElementById('soaps').innerHTML
-              += '<div class="content">'
-
-              + '<img id="' + soaps[i].id + ' " class="img-thumbnail mySoaps" src="' + soaps[i].photo1 + ' "  alt="Soap"/>'
-
-              + '</div>';
-
+              displaySoaps(i);
               //onclick function
               $('.mySoaps').on('click', function(){
                 // $('.overlay').hide();
@@ -355,114 +311,240 @@ var i;
                   $('.overlay').show();
                   $('#hideContainer').hide();
                 console.log(this.id);
-
                 //reusable code ---  make it a function passing parameter
-                for ( i = 0; i < soaps.length ; i++) {
-               if (soaps[i].scent.toLowerCase() === 'citrus' && parseInt(this.id) === soaps[i].id){
+              for ( i = 0; i < soaps.length ; i++) {
+              if (soaps[i].scent.toLowerCase() === 'cinnamon' && parseInt(this.id) === soaps[i].id){
               //remove leading and trailing space in the string while trying to match
-              document.getElementById('modalContent').innerHTML = '<div class="myJumbo"> '
-              + '<div class="soapName">'
-              + soaps[i].name + '</div>'
-              + '</br>For: ' + soaps[i].use
-              + '</br>Scent: ' + soaps[i].scent
-              + '</br>' + 'Price: $' + soaps[i].price
-              + '</div>'
-              + '<div id="carouselExampleIndicators" class="carousel slide myCarousel" data-ride="carousel">'
-              +      '<ol class="carousel-indicators">'
-              +         '<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>'
-              +         '<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>'
-              +         '<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>'
-              +      '</ol> <div class="carousel-inner"><div class="carousel-item active">'
-              + '<img class="card-thumbnail  mySoaps modalSoap" src="' + soaps[i].photo1 + '"  alt="Soap"/>'
-              + '</div> <div class="carousel-item">'
-              + '<img class="card-thumbnail  mySoaps modalSoap" src="' + soaps[i].photo2 + '"  alt="Soap"/>'
-              + '</div><div class="carousel-item">'
-              + '<img class="card-thumbnail  mySoaps modalSoap" src="' + soaps[i].photo3 + '"  alt="Soap"/>'
-              + '</div> </div>'
-              + '<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">'
-              + '<span class="carousel-control-prev-icon" aria-hidden="true"></span>'
-              + '<span class="sr-only">Previous</span> </a>'
-              + '<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">'
-              + '<span class="carousel-control-next-icon" aria-hidden="true"></span>'
-              + '<span class="sr-only">Next</span> </a></div>';
-            }
-}
-                });
-                citrusId++;
+              modalInfo(i);
             }
           }
-
-   // });
- // }
-// }
+       });
+  propId++;
+    }
+  }
 });
 
-// Scent: Lavender
+// Scent: CITRUS
+document.getElementById('citrus-scent').addEventListener('click', function(){
+document.getElementById('soaps').innerHTML = " "; //to clear the container
+  // for(var i = 0; i < soaps.length; i++) {
+  //   if (soaps[i].scent === "Citrus") {
+  //     displaySoaps(i);
+var propId= 101;
+var i;
+for ( i = 0; i < soaps.length ; i++) {
+  if (soaps[i].scent.toLowerCase() === 'citrus'){
+    //display function
+    document.getElementById('soaps').innerHTML
+    displaySoaps(i);
+    //onclick function
+    $('.mySoaps').on('click', function(){
+      // $('.overlay').hide();
+      // $('.mySoaps').on('click', function(){
+        $('.overlay').show();
+        $('#hideContainer').hide();
+      console.log(this.id);
+      //reusable code ---  make it a function passing parameter
+    for ( i = 0; i < soaps.length ; i++) {
+    if (soaps[i].scent.toLowerCase() === 'citrus' && parseInt(this.id) === soaps[i].id){
+    //remove leading and trailing space in the string while trying to match
+    modalInfo(i);
+            }
+          }
+       });
+  propId++;
+    }
+  }
+});
+
+// Scent: LAVENDER
 
 document.getElementById('lavender-scent').addEventListener('click', function(){
-  document.getElementById('soaps').innerHTML = " "; //to clear the container
-  for(var i = 0; i < soaps.length; i++) {
-    if (soaps[i].scent === "Lavender") {
-      displaySoaps(i);
- }
-}
+document.getElementById('soaps').innerHTML = " "; //to clear the container
+var propId= 101;
+var i;
+for ( i = 0; i < soaps.length ; i++) {
+  if (soaps[i].scent.toLowerCase() === 'lavender'){
+    //display function
+    document.getElementById('soaps').innerHTML
+    displaySoaps(i);
+    //onclick function
+    $('.mySoaps').on('click', function(){
+      // $('.overlay').hide();
+      // $('.mySoaps').on('click', function(){
+        $('.overlay').show();
+        $('#hideContainer').hide();
+      console.log(this.id);
+      //reusable code ---  make it a function passing parameter
+    for ( i = 0; i < soaps.length ; i++) {
+    if (soaps[i].scent.toLowerCase() === 'lavender' && parseInt(this.id) === soaps[i].id){
+    //remove leading and trailing space in the string while trying to match
+    modalInfo(i);
+            }
+          }
+       });
+  propId++;
+    }
+  }
 });
 
 // Scent: Vanilla
 
 document.getElementById('vanilla-scent').addEventListener('click', function(){
-  document.getElementById('soaps').innerHTML = " "; //to clear the container
-  for(var i = 0; i < soaps.length; i++) {
-    if (soaps[i].scent === "Vanilla") {
-      displaySoaps(i);
- }
-}
+document.getElementById('soaps').innerHTML = " "; //to clear the container
+var propId= 101;
+var i;
+for ( i = 0; i < soaps.length ; i++) {
+  if (soaps[i].scent.toLowerCase() === 'vanilla'){
+    //display function
+    document.getElementById('soaps').innerHTML
+    displaySoaps(i);
+    //onclick function
+    $('.mySoaps').on('click', function(){
+      // $('.overlay').hide();
+      // $('.mySoaps').on('click', function(){
+        $('.overlay').show();
+        $('#hideContainer').hide();
+      console.log(this.id);
+      //reusable code ---  make it a function passing parameter
+    for ( i = 0; i < soaps.length ; i++) {
+    if (soaps[i].scent.toLowerCase() === 'vanilla' && parseInt(this.id) === soaps[i].id){
+    //remove leading and trailing space in the string while trying to match
+    modalInfo(i);
+            }
+          }
+       });
+  propId++;
+    }
+  }
 });
 
 // Scent: Spearmint
 
 document.getElementById('spearmint-scent').addEventListener('click', function(){
-  document.getElementById('soaps').innerHTML = " "; //to clear the container
-  for(var i = 0; i < soaps.length; i++) {
-    if (soaps[i].scent === "Spearmint") {
-      displaySoaps(i);
- }
-}
+document.getElementById('soaps').innerHTML = " "; //to clear the container
+var propId= 101;
+var i;
+for ( i = 0; i < soaps.length ; i++) {
+  if (soaps[i].scent.toLowerCase() === 'spearmint'){
+    //display function
+    document.getElementById('soaps').innerHTML
+    displaySoaps(i);
+    //onclick function
+    $('.mySoaps').on('click', function(){
+      // $('.overlay').hide();
+      // $('.mySoaps').on('click', function(){
+        $('.overlay').show();
+        $('#hideContainer').hide();
+      console.log(this.id);
+      //reusable code ---  make it a function passing parameter
+    for ( i = 0; i < soaps.length ; i++) {
+    if (soaps[i].scent.toLowerCase() === 'spearmint' && parseInt(this.id) === soaps[i].id){
+    //remove leading and trailing space in the string while trying to match
+    modalInfo(i);
+            }
+          }
+       });
+  propId++;
+    }
+  }
 });
 
 
 // Scent: Ginger
 
 document.getElementById('ginger-scent').addEventListener('click', function(){
-  document.getElementById('soaps').innerHTML = " "; //to clear the container
-  for(var i = 0; i < soaps.length; i++) {
-    if (soaps[i].scent === "Ginger") {
-      displaySoaps(i);
- }
-}
+document.getElementById('soaps').innerHTML = " "; //to clear the container
+var propId= 101;
+var i;
+for ( i = 0; i < soaps.length ; i++) {
+  if (soaps[i].scent.toLowerCase() === 'ginger'){
+    //display function
+    document.getElementById('soaps').innerHTML
+    displaySoaps(i);
+    //onclick function
+    $('.mySoaps').on('click', function(){
+      // $('.overlay').hide();
+      // $('.mySoaps').on('click', function(){
+        $('.overlay').show();
+        $('#hideContainer').hide();
+      console.log(this.id);
+      //reusable code ---  make it a function passing parameter
+    for ( i = 0; i < soaps.length ; i++) {
+    if (soaps[i].scent.toLowerCase() === 'ginger' && parseInt(this.id) === soaps[i].id){
+    //remove leading and trailing space in the string while trying to match
+    modalInfo(i);
+            }
+          }
+       });
+  propId++;
+    }
+  }
 });
 
 // Scent: Ylang Ylang
 
 document.getElementById('ylang-scent').addEventListener('click', function(){
-  document.getElementById('soaps').innerHTML = " "; //to clear the container
-  for(var i = 0; i < soaps.length; i++) {
-    if (soaps[i].scent === "Ylang Ylang") {
-      displaySoaps(i);
- }
-}
+document.getElementById('soaps').innerHTML = " "; //to clear the container
+var propId= 101;
+var i;
+for ( i = 0; i < soaps.length ; i++) {
+  if (soaps[i].scent.toLowerCase() === 'ylang ylang'){
+    //display function
+    document.getElementById('soaps').innerHTML
+    displaySoaps(i);
+    //onclick function
+    $('.mySoaps').on('click', function(){
+      // $('.overlay').hide();
+      // $('.mySoaps').on('click', function(){
+        $('.overlay').show();
+        $('#hideContainer').hide();
+      console.log(this.id);
+      //reusable code ---  make it a function passing parameter
+    for ( i = 0; i < soaps.length ; i++) {
+    if (soaps[i].scent.toLowerCase() === 'ylang ylang' && parseInt(this.id) === soaps[i].id){
+    //remove leading and trailing space in the string while trying to match
+    modalInfo(i);
+            }
+          }
+       });
+  propId++;
+    }
+  }
 });
 
-// Scent: Ylang Ylang
+// Scent: No Scent
 
 document.getElementById('no-scent').addEventListener('click', function(){
-  document.getElementById('soaps').innerHTML = " "; //to clear the container
-  for(var i = 0; i < soaps.length; i++) {
-    if (soaps[i].scent === "No scent") {
-      displaySoaps(i);
- }
-}
+document.getElementById('soaps').innerHTML = " "; //to clear the container
+var propId= 101;
+var i;
+for ( i = 0; i < soaps.length ; i++) {
+  if (soaps[i].scent.toLowerCase() === 'no scent'){
+    //display function
+    document.getElementById('soaps').innerHTML
+    displaySoaps(i);
+    //onclick function
+    $('.mySoaps').on('click', function(){
+      // $('.overlay').hide();
+      // $('.mySoaps').on('click', function(){
+        $('.overlay').show();
+        $('#hideContainer').hide();
+      console.log(this.id);
+      //reusable code ---  make it a function passing parameter
+    for ( i = 0; i < soaps.length ; i++) {
+    if (soaps[i].scent.toLowerCase() === 'no scent' && parseInt(this.id) === soaps[i].id){
+    //remove leading and trailing space in the string while trying to match
+    modalInfo(i);
+            }
+          }
+       });
+  propId++;
+    }
+  }
 });
+
+
 
 
 // Modal information
@@ -550,11 +632,11 @@ $('.overlay').on('click', function(e) {
   $('.overlay').hide();
 });
 
-// Hover to change color
+// Hover to change color of call to action button
 
 $(document).ready(function(){
   $("#products").hover(function(){
-    $(this).css("background-color", "#e6f2ff");
+    $(this).css("background-color", "#F5F5F5");
     }, function(){
     $(this).css("background-color", "");
   });
