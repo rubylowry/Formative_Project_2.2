@@ -185,7 +185,16 @@ var soaps = [
 
 console.log(soaps);
 
-
+document.getElementById('highLow').addEventListener('click', function(){
+   soaps.sort(compare);
+   function compare (a,b){
+     if (a.price < b.price) {
+         return 1; // return one means it returns true
+     } else if (a.price > b.price) {
+       return -1; // returns false
+     }
+   }
+});
 
 
 // Show all soaps
@@ -257,7 +266,7 @@ document.getElementById('face').addEventListener('click', function(){
 // Body products
 
 document.getElementById('body').addEventListener('click', function(){
-  console.log(soaps);
+  document.getElementById('body').scrollIntoView();
   document.getElementById('soaps').innerHTML = " "; //to clear the container
 
   var propId= 101;
@@ -290,7 +299,7 @@ document.getElementById('body').addEventListener('click', function(){
 // Hair products
 
 document.getElementById('hair').addEventListener('click', function(){
-  console.log(soaps);
+  document.getElementById('hair').scrollIntoView();
   document.getElementById('soaps').innerHTML = " "; //to clear the container
 
   var propId= 101;
@@ -323,6 +332,7 @@ document.getElementById('hair').addEventListener('click', function(){
 // Scent: Rose
 
 document.getElementById('rose-scent').addEventListener('click', function(){
+  document.getElementById('rose-scent').scrollIntoView();
 document.getElementById('soaps').innerHTML = " "; //to clear the container
 var propId= 101;
 var i;
@@ -353,6 +363,7 @@ for ( i = 0; i < soaps.length ; i++) {
 
 // Scent: CINNAMON
 document.getElementById('cinnamon-scent').addEventListener('click', function(){
+  document.getElementById('cinnamon-scent').scrollIntoView();
 document.getElementById('soaps').innerHTML = " "; //to clear the container
   // for(var i = 0; i < soaps.length; i++) {
   //   if (soaps[i].scent === "Citrus") {
@@ -386,6 +397,7 @@ var i;
 
 // Scent: CITRUS
 document.getElementById('citrus-scent').addEventListener('click', function(){
+  document.getElementById('citrus-scent').scrollIntoView();
 document.getElementById('soaps').innerHTML = " "; //to clear the container
   // for(var i = 0; i < soaps.length; i++) {
   //   if (soaps[i].scent === "Citrus") {
@@ -420,6 +432,7 @@ for ( i = 0; i < soaps.length ; i++) {
 // Scent: LAVENDER
 
 document.getElementById('lavender-scent').addEventListener('click', function(){
+  document.getElementById('lavender-scent').scrollIntoView();
 document.getElementById('soaps').innerHTML = " "; //to clear the container
 var propId= 101;
 var i;
@@ -451,6 +464,7 @@ for ( i = 0; i < soaps.length ; i++) {
 // Scent: Vanilla
 
 document.getElementById('vanilla-scent').addEventListener('click', function(){
+  document.getElementById('vanilla-scent').scrollIntoView();
 document.getElementById('soaps').innerHTML = " "; //to clear the container
 var propId= 101;
 var i;
@@ -482,6 +496,7 @@ for ( i = 0; i < soaps.length ; i++) {
 // Scent: Spearmint
 
 document.getElementById('spearmint-scent').addEventListener('click', function(){
+  document.getElementById('spearmint-scent').scrollIntoView();
 document.getElementById('soaps').innerHTML = " "; //to clear the container
 var propId= 101;
 var i;
@@ -514,6 +529,7 @@ for ( i = 0; i < soaps.length ; i++) {
 // Scent: Ginger
 
 document.getElementById('ginger-scent').addEventListener('click', function(){
+  document.getElementById('ginger-scent').scrollIntoView();
 document.getElementById('soaps').innerHTML = " "; //to clear the container
 var propId= 101;
 var i;
@@ -545,6 +561,7 @@ for ( i = 0; i < soaps.length ; i++) {
 // Scent: Ylang Ylang
 
 document.getElementById('ylang-scent').addEventListener('click', function(){
+  document.getElementById('ylang-scent').scrollIntoView();
 document.getElementById('soaps').innerHTML = " "; //to clear the container
 var propId= 101;
 var i;
@@ -576,6 +593,7 @@ for ( i = 0; i < soaps.length ; i++) {
 // Scent: No Scent
 
 document.getElementById('no-scent').addEventListener('click', function(){
+  document.getElementById('no-scent').scrollIntoView();
 document.getElementById('soaps').innerHTML = " "; //to clear the container
 var propId= 101;
 var i;
