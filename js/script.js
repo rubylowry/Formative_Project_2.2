@@ -241,6 +241,7 @@ document.getElementById('face').addEventListener('click', function(){
 document.getElementById('body').addEventListener('click', function(){
   console.log(soaps);
   document.getElementById('soaps').innerHTML = " "; //to clear the container
+
   for(var i = 0; i < soaps.length; i++) {
     if (soaps[i].use === "Body") {
       displaySoaps(i);
@@ -253,9 +254,30 @@ document.getElementById('body').addEventListener('click', function(){
 document.getElementById('hair').addEventListener('click', function(){
   console.log(soaps);
   document.getElementById('soaps').innerHTML = " "; //to clear the container
+
+  var propId= 101;
+  var i;
   for(var i = 0; i < soaps.length; i++) {
     if (soaps[i].use === "Hair") {
       displaySoaps(i);
+
+
+
+
+    //onclick function
+    $('.mySoaps').on('click', function(){
+        $('.overlay').show();
+        $('#hideContainer').hide();
+      console.log(this.id);
+      //reusable code ---  make it a function passing parameter
+    for ( i = 0; i < soaps.length ; i++) {
+    if (soaps[i].use.toLowerCase() === 'hair' && parseInt(this.id) === soaps[i].id){
+    //remove leading and trailing space in the string while trying to match
+    modalInfo(i);
+            }
+          }
+       });
+  propId++;
     }
   }
 });
