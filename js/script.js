@@ -227,7 +227,7 @@ document.getElementById('products').addEventListener('click', function(){
 // Face products
 
 document.getElementById('face').addEventListener('click', function(){
-  console.log(soaps);
+  document.getElementById('face').scrollIntoView();
   document.getElementById('soaps').innerHTML = " "; //to clear the container
 
   var propId= 101;
@@ -235,9 +235,6 @@ document.getElementById('face').addEventListener('click', function(){
   for(var i = 0; i < soaps.length; i++) {
     if (soaps[i].use === "Face") {
       displaySoaps(i);
-
-
-
 
     //onclick function
     $('.mySoaps').on('click', function(){
