@@ -185,16 +185,16 @@ var soaps = [
 
 console.log(soaps);
 
-document.getElementById('highLow').addEventListener('click', function(){
-   soaps.sort(compare);
-   function compare (a,b){
-     if (a.price < b.price) {
-         return 1; // return one means it returns true
-     } else if (a.price > b.price) {
-       return -1; // returns false
-     }
-   }
-});
+// document.getElementById('highLow').addEventListener('click', function(){
+//    soaps.sort(compare);
+//    function compare (a,b){
+//      if (a.price < b.price) {
+//          return 1; // return one means it returns true
+//      } else if (a.price > b.price) {
+//        return -1; // returns false
+//      }
+//    }
+// });
 
 
 // Show all soaps
