@@ -3,17 +3,17 @@ console.log('formative project 2.2');
 var soaps = [
   {
     name : "Chai",
-    id : "S101",
+    id : 101,
     use : "Body",
     scent : "Cinnamon",
     price : 20,
     photo1: "img/chai.jpg",
-    photo2: "img/.jpg",
-    photo3: "img/.jpg",
+    photo2: "img/chai.jpg",
+    photo3: "img/chai.jpg",
   },
   {
     name : "Petal",
-    id : "S102",
+    id : 102,
     use : "Body",
     scent : "Rose",
     price : 22,
@@ -23,107 +23,107 @@ var soaps = [
   },
   {
     name : "Blue Mountain",
-    id : "S103",
+    id : 103,
     use : "Body",
     scent : "Lavender",
     price : 22,
     photo1: "img/mountain.jpg",
-    photo2: "img/.jpg",
-    photo3: "img/.jpg"
+    photo2: "img/mountain.jpg",
+    photo3: "img/mountain.jpg"
   },
   {
     name : "Rosie",
-    id : "S104",
+    id : 104,
     use : "Skin",
     scent : "Rose",
     price : 26,
     photo1: "img/rosie.jpg",
-    photo2: "img/.jpg",
-    photo3: "img/.jpg"
+    photo2: "img/rosie.jpg",
+    photo3: "img/rosie.jpg"
   },
   {
     name : "Full Moon",
-    id : "S105",
+    id : 105,
     use : "Hair",
     scent : "Spearmint",
     price : 30,
     photo1: "img/night-sky.jpg",
-    photo2: "img/.jpg",
-    photo3: "img/.jpg"
+    photo2: "img/night-sky.jpg",
+    photo3: "img/night-sky.jpg"
   },
   {
     name : "Honeybee",
-    id : "S106",
+    id : 106,
     use : "Face",
     scent : "No scent",
     price : 30,
     photo1: "img/honeybee.jpg",
-    photo2: "img/.jpg",
-    photo3: "img/.jpg"
+    photo2: "img/honeybee.jpg",
+    photo3: "img/honeybee.jpg"
   },
   {
     name : "Sea Salt",
-    id : "S107",
+    id : 107,
     use : "Face",
     scent : "Lavender",
     price : 26,
     photo1: "img/after sunset.jpg",
-    photo2: "img/.jpg",
-    photo3: "img/.jpg"
+    photo2: "img/after sunset.jpg",
+    photo3: "img/after sunset.jpg"
   },
   {
     name : "Milkshake",
-    id : "S108",
+    id : 108,
     use : "Body",
     scent : "Vanilla",
     price : 36,
     photo1: "img/simple-is-best.jpg",
-    photo2: "img/.jpg",
-    photo3: "img/.jpg"
+    photo2: "img/simple-is-best.jpg",
+    photo3: "img/simple-is-best.jpg"
   },
   {
     name : "Coconut Dreams",
-    id : "S109",
+    id : 109,
     use : "Hair",
     scent : "Ylang Ylang",
     price : 30,
     photo1: "img/crisp.jpg",
-    photo2: "img/.jpg",
-    photo3: "img/.jpg"
+    photo2: "img/crisp.jpg",
+    photo3: "img/crisp.jpg"
   },
   {
     name : "Tropical Beach",
-    id : "S110",
+    id : 110,
     use : "Body",
     scent : "Citrus",
     price : 33,
     photo1: "img/citrus.jpg",
-    photo2: "img/.jpg",
-    photo3: "img/.jpg"
+    photo2: "img/citrus.jpg",
+    photo3: "img/citrus.jpg"
   },
   {
     name : "Birthday Cake",
-    id : "S111",
+    id : 111,
     use : "Face",
     scent : "Vanilla",
     price : 26,
     photo1: "img/berry kisses.jpg",
-    photo2: "img/.jpg",
-    photo3: "img/.jpg"
+    photo2: "img/berry kisses.jpg",
+    photo3: "img/berry kisses.jpg"
   },
   {
     name : "Mint Bar",
-    id : "S112",
+    id : 112,
     use : "Hair",
     scent : "Spearmint",
     price : 28,
     photo1: "img/mint-bar.jpg",
-    photo2: "img/.jpg",
-    photo3: "img/.jpg"
+    photo2: "img/mint-bar.jpg",
+    photo3: "img/mint-bar.jpg"
   },
   {
     name : "Oat Mylk",
-    id : "S113",
+    id : 113,
     use : "Hair",
     scent : "No scent",
     price : 28,
@@ -133,17 +133,17 @@ var soaps = [
   },
   {
     name : "Lavender Dreams",
-    id : "S114",
+    id : 114,
     use : "Body",
     scent : "Lavender",
     price : 28,
     photo1: "img/lavender-dreams.jpg",
-    photo2: "img/.jpg",
-    photo3: "img/.jpg"
+    photo2: "img/lavender-dreams.jpg",
+    photo3: "img/lavender-dreams.jpg"
   },
   {
     name : "Candy Floss",
-    id : "S115",
+    id : 115,
     use : "Hair",
     scent : "No scent",
     price : 28,
@@ -153,7 +153,7 @@ var soaps = [
   },
   {
     name : "Breakfast Bar",
-    id : "S116",
+    id : 116,
     use : "Body",
     scent : "Citrus",
     price : 28,
@@ -163,17 +163,17 @@ var soaps = [
   },
   {
     name : "Ginger",
-    id : "S117",
+    id : 117,
     use : "Face",
     scent : "Ginger",
     price : 20,
     photo1: "img/ginger.jpg",
-    photo2: "img/.jpg",
-    photo3: "img/.jpg"
+    photo2: "img/ginger.jpg",
+    photo3: "img/ginger.jpg"
   },
   {
     name : "Tiramisu",
-    id : "S118",
+    id : 118,
     use : "Face",
     scent : "Vanilla",
     price : 20,
@@ -185,9 +185,13 @@ var soaps = [
 
 console.log(soaps);
 
+soaps.sort();
+console.log(soaps.sort());
+
+
 // Show all soaps
 
-var id = 101; // Variable is used to generate id's for image
+// var id = 101; // Variable is used to generate id's for image
 
 // ALL SOAPS WILL APPEAR HERE
 allSoaps();
@@ -207,7 +211,7 @@ function displaySoaps(j){
   // + '<div class="column">'
   += '<div class="content">'
   // + '<div class="content-header">' + soaps[j].name + '</div>'
-  + '<img id="S' + id.toString() + ' " class="img-thumbnail mySoaps" src="' + soaps[j].photo1 + ' "  alt="Soap"/>'
+  + '<img id="' + soaps[j].id + ' " class="img-thumbnail mySoaps" src="' + soaps[j].photo1 + ' "  alt="Soap"/>'
   // + '<div class="mainText">'
   // + '<div class="content-text">Use: ' + soaps[j].use + '</div>'
   // + '<div class="content-text">Scent: ' + soaps[j].scent + '</div>'
@@ -216,7 +220,7 @@ function displaySoaps(j){
   // + '</div>'
   // + '</div>'
   + '</div>';
-  id++;
+  // id++;
 }
 
 
@@ -227,7 +231,9 @@ document.getElementById('products').addEventListener('click', function(){
   document.getElementById('soaps').innerHTML = " "; //to clear the container
   for(var i = 0; i < soaps.length; i++) {
       displaySoaps(i);
+
    }
+   homeModal();
 });
 
 // Face products
@@ -262,9 +268,6 @@ document.getElementById('hair').addEventListener('click', function(){
   for(var i = 0; i < soaps.length; i++) {
     if (soaps[i].use === "Hair") {
       displaySoaps(i);
-      $('.mySoaps').on('click', function(){
-        usesModal('hair');
-     });
     }
   }
 });
@@ -272,14 +275,37 @@ document.getElementById('hair').addEventListener('click', function(){
 
 // Scent: Rose
 
+// Function to open the member modal
+function openModal(i){
+   // Shows my custom modal of any particular member that the user clicks on
+   $('.content').on('click', function(){
+       // Shows the id of the fencer that was clicked in the console, used for trouble shooting
+       console.log(this.id);
+       // Reveals the modal that the information is going to be shown in
+       $('.overlay').show();
+       for(i=0; i<soaps.length; i++) {
+           // This looks at the id defined and checksfor equivalence with the fencer's id that was clicked. It will dispaly the information
+           if(this.id == soaps[i].id) {
+               // Prints the dog that was clicked into the modal with the correlating information
+               modalInfo(i);
+           }
+         }
+      });
+    }
+
 document.getElementById('rose-scent').addEventListener('click', function(){
   document.getElementById('soaps').innerHTML = " "; //to clear the container
   for(var i = 0; i < soaps.length; i++) {
     if (soaps[i].scent === "Rose") {
-      displaySoaps(i);
-      $('.mySoaps').on('click', function(){
-        showModal("Rose");
-   });
+  document.getElementById('soaps').innerHTML
+      += '<div class="content">'
+
+      + '<img id="' + soaps[j].id + ' " class="img-thumbnail mySoaps" src="' + soaps[j].photo1 + ' "  alt="Soap"/>'
+
+      + '</div>';
+   //    $('.content').on('click', function(){
+   //         openModal(i);
+   // });
    }
   }
 });
@@ -302,12 +328,138 @@ document.getElementById('cinnamon-scent').addEventListener('click', function(){
 
 document.getElementById('citrus-scent').addEventListener('click', function(){
   document.getElementById('soaps').innerHTML = " "; //to clear the container
+  // for(var i = 0; i < soaps.length; i++) {
+  //   if (soaps[i].scent === "Citrus") {
+  //     displaySoaps(i);
+var citrusId= 101;
+var i;
+          for ( i = 0; i < soaps.length ; i++) {
+            //id property of soaps is checked for  equivalence with the image id of the clicked element
+            // if (this.id.trim() == soaps[i].id.trim()) {
+           //  console.log(data,soaps[i].scent);
+
+
+            if (soaps[i].scent.toLowerCase() === 'citrus'){
+              //display function
+              document.getElementById('soaps').innerHTML
+              += '<div class="content">'
+
+              + '<img id="' + soaps[i].id + ' " class="img-thumbnail mySoaps" src="' + soaps[i].photo1 + ' "  alt="Soap"/>'
+
+              + '</div>';
+
+              //onclick function
+              $('.mySoaps').on('click', function(){
+                // $('.overlay').hide();
+                // $('.mySoaps').on('click', function(){
+                  $('.overlay').show();
+                  $('#hideContainer').hide();
+                console.log(this.id);
+
+                //reusable code ---  make it a function passing parameter
+                for ( i = 0; i < soaps.length ; i++) {
+               if (soaps[i].scent.toLowerCase() === 'citrus' && parseInt(this.id) === soaps[i].id){
+              //remove leading and trailing space in the string while trying to match
+              document.getElementById('modalContent').innerHTML = '<div class="myJumbo"> '
+              + '<div class="soapName">'
+              + soaps[i].name + '</div>'
+              + '</br>For: ' + soaps[i].use
+              + '</br>Scent: ' + soaps[i].scent
+              + '</br>' + 'Price: $' + soaps[i].price
+              + '</div>'
+              + '<div id="carouselExampleIndicators" class="carousel slide myCarousel" data-ride="carousel">'
+              +      '<ol class="carousel-indicators">'
+              +         '<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>'
+              +         '<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>'
+              +         '<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>'
+              +      '</ol> <div class="carousel-inner"><div class="carousel-item active">'
+              + '<img class="card-thumbnail  mySoaps modalSoap" src="' + soaps[i].photo1 + '"  alt="Soap"/>'
+              + '</div> <div class="carousel-item">'
+              + '<img class="card-thumbnail  mySoaps modalSoap" src="' + soaps[i].photo2 + '"  alt="Soap"/>'
+              + '</div><div class="carousel-item">'
+              + '<img class="card-thumbnail  mySoaps modalSoap" src="' + soaps[i].photo3 + '"  alt="Soap"/>'
+              + '</div> </div>'
+              + '<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">'
+              + '<span class="carousel-control-prev-icon" aria-hidden="true"></span>'
+              + '<span class="sr-only">Previous</span> </a>'
+              + '<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">'
+              + '<span class="carousel-control-next-icon" aria-hidden="true"></span>'
+              + '<span class="sr-only">Next</span> </a></div>';
+            }
+}
+                });
+                citrusId++;
+            }
+          }
+
+   // });
+ // }
+// }
+});
+
+// Scent: Lavender
+
+document.getElementById('lavender-scent').addEventListener('click', function(){
+  document.getElementById('soaps').innerHTML = " "; //to clear the container
   for(var i = 0; i < soaps.length; i++) {
-    if (soaps[i].scent === "Citrus") {
+    if (soaps[i].scent === "Lavender") {
       displaySoaps(i);
-      $('.mySoaps').on('click', function(){
-          showModal('citrus');
-   });
+ }
+}
+});
+
+// Scent: Vanilla
+
+document.getElementById('vanilla-scent').addEventListener('click', function(){
+  document.getElementById('soaps').innerHTML = " "; //to clear the container
+  for(var i = 0; i < soaps.length; i++) {
+    if (soaps[i].scent === "Vanilla") {
+      displaySoaps(i);
+ }
+}
+});
+
+// Scent: Spearmint
+
+document.getElementById('spearmint-scent').addEventListener('click', function(){
+  document.getElementById('soaps').innerHTML = " "; //to clear the container
+  for(var i = 0; i < soaps.length; i++) {
+    if (soaps[i].scent === "Spearmint") {
+      displaySoaps(i);
+ }
+}
+});
+
+
+// Scent: Ginger
+
+document.getElementById('ginger-scent').addEventListener('click', function(){
+  document.getElementById('soaps').innerHTML = " "; //to clear the container
+  for(var i = 0; i < soaps.length; i++) {
+    if (soaps[i].scent === "Ginger") {
+      displaySoaps(i);
+ }
+}
+});
+
+// Scent: Ylang Ylang
+
+document.getElementById('ylang-scent').addEventListener('click', function(){
+  document.getElementById('soaps').innerHTML = " "; //to clear the container
+  for(var i = 0; i < soaps.length; i++) {
+    if (soaps[i].scent === "Ylang Ylang") {
+      displaySoaps(i);
+ }
+}
+});
+
+// Scent: Ylang Ylang
+
+document.getElementById('no-scent').addEventListener('click', function(){
+  document.getElementById('soaps').innerHTML = " "; //to clear the container
+  for(var i = 0; i < soaps.length; i++) {
+    if (soaps[i].scent === "No scent") {
+      displaySoaps(i);
  }
 }
 });
@@ -355,7 +507,8 @@ $('.mySoaps').on('click', function(){
   $('#hideContainer').hide();
   for (var i = 0; i < soaps.length ; i++) {
     //id property of soaps is checked for  equivalence with the image id of the clicked element
-    if (this.id.trim() == soaps[i].id.trim()) {
+    // if (this.id.trim() == soaps[i].id.trim()) {
+    if (this.id == soaps[i].id) {
       //remove leading and trailing space in the string while trying to match
       modalInfo(i);
       }
@@ -363,9 +516,8 @@ $('.mySoaps').on('click', function(){
   });
 }
 
-
-// Display modal with SCENT property
-function showModal(scent){
+// Display modal with USE property
+function showModal(data){
 $('.overlay').hide();
 $('.mySoaps').on('click', function(){
   $('.overlay').show();
@@ -373,27 +525,8 @@ $('.mySoaps').on('click', function(){
   for (var i = 0; i < soaps.length ; i++) {
     //id property of soaps is checked for  equivalence with the image id of the clicked element
     // if (this.id.trim() == soaps[i].id.trim()) {
-    console.log(scent,soaps[i].scent);
-
-    if (soaps[i].scent.toLowerCase() === scent.toLowerCase()){
-      //remove leading and trailing space in the string while trying to match
-      modalInfo(i);
-    }
-  }
-  });
-}
-
-// Display modal with SCENT property
-function usesModal(data){
-$('.overlay').hide();
-$('.mySoaps').on('click', function(){
-  $('.overlay').show();
-  $('#hideContainer').hide();
-  for (var i = 0; i < soaps.length ; i++) {
-    //id property of soaps is checked for  equivalence with the image id of the clicked element
-    // if (this.id.trim() == soaps[i].id.trim()) {
-    console.log(data,soaps[i].use);
-    if (soaps[i].use.toLowerCase() === data.toLowerCase()){
+    console.log(data,soaps[i].scent);
+    if (soaps[i].scent.toLowerCase() === data.toLowerCase()){
       //remove leading and trailing space in the string while trying to match
       modalInfo(i);
     }
@@ -417,16 +550,20 @@ $('.overlay').on('click', function(e) {
   $('.overlay').hide();
 });
 
-const searchBar = document.forms['search-soaps'].querySelector('input');
-searchBar.addEventListener('keyup', function(e){
-  const term = e.target.value.toLowerCase();
-  const theSoaps = list.getElementsByTagName('li');
-  Array.from(theSoaps).forEach(function(theSoaps){
-    const name = theSoap.firstElementChild.textContent;
-    if(title.toLowerCase().indexOf(term)!= -1){
-      theSoap.style.display = 'block';
-    } else {
-      allSoap.style.display = 'none';
-    }
-  })
-})
+// Hover to change color
+
+$(document).ready(function(){
+  $("#products").hover(function(){
+    $(this).css("background-color", "#e6f2ff");
+    }, function(){
+    $(this).css("background-color", "");
+  });
+});
+
+$(document).ready(function(){
+  $("#products").hover(function(){
+    $(this).css("color", "#404040");
+    }, function(){
+    $(this).css("color", "");
+  });
+});
